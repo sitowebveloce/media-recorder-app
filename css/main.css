@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background: #292929;
+    width: 100%;
+    height: 100vh;
+}
+
+a {
+    display: inline-block;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3rem;
+    display: block;
+    padding: 20px;
+    color: #313142;
+    letter-spacing: 5px;
+    text-shadow: -1px -1px 2px #000000, 1px 1px 2px #ffffff;
+}
+
+.console {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.div-audio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-audio audio {
+    margin: 10px auto;
+}
+
+.stopwatch {
+    min-height: 40px;
+    color: #ffffff;
+}
+
+button {
+    border: none;
+    outline: none;
+    margin: 5px 10px;
+    cursor: pointer;
+    transition: 1s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button.rec {
+    width: 80px;
+    height: 80px;
+    color: #ffffff;
+    border-radius: 50%;
+    background: rgb(255, 0, 0);
+}
+
+button.stop {
+    width: 80px;
+    height: 80px;
+    border-radius: 2px;
+    color: rgb(103, 103, 103);
+    background: #292929;
+    box-shadow: 4px 4px 8px #232334, -4px -4px 8px #2F2F39;
+}
+
+audio {
+    outline: none;
+    width: 300px;
+    height: 30px;
+    opacity: 1;
+    transition: opacity 3s ease-in-out;
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: red;
+    border-radius: 50%;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #313131;
+    color: #ffffff;
+}
+
+audio::-webkit-media-controls-overlay-enclosure {
+    display: none;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: #ffffff;
+}
+
+img.home {
+    display: block;
+    margin: 10px auto;
+}
+
+img.reset {
+    display: block;
+    margin: 10px auto;
+}
+
+.div-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.devices-status {
+    position: absolute;
+    bottom: 3%;
+    min-height: 13px;
+    padding: 8px;
+    color: #ffffff;
+    background: #292929;
+    box-shadow: 4px 4px 8px #232334, -4px -4px 8px #2F2F39;
+    opacity: 1;
+    visibility: visible;
+    transition: 3s ease-in-out;
+}
+
+.devices-status.hide {
+    opacity: 0;
+    visibility: hidden;
+    min-height: 0px;
+}
+
+.scale {
+    animation: scale 3s linear infinite;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
