@@ -91,24 +91,38 @@ let linkStyles = "display: block; padding: 10px; color:red; text-decoration: non
     //─── FUNCTION TO CREATE AN AUDIO ELEMENT TO PLAYBACK AND DOWNLOAD RECORDING ─────
 
 function createAudioElement(blobUrl) {
+    // Create a div element
     const divEl = document.createElement('div');
+    // Assign it a class
     divEl.className = 'div-audio'
+        // Create an anchor tag
     const downloadEl = document.createElement('a');
+    // Give it styles
     downloadEl.style = linkStyles;
+    // Give it a progressive name
     downloadEl.innerHTML = `Download-${counter = counter + 1}`;
     downloadEl.download = `Audio-${counter}.webm`;
+    // Define href
     downloadEl.href = blobUrl;
+    // Create audio element
     const audioEl = document.createElement('audio');
+    // Give it a class
     audioEl.className = 'audio'
+        // Show controls play pause etc
     audioEl.controls = true;
+    // Create source
     const sourceEl = document.createElement('source');
     sourceEl.src = blobUrl;
+    // Audio type
     sourceEl.type = 'audio/webm';
+    // Append source on audio
     audioEl.appendChild(sourceEl);
     // document.body.appendChild(audioEl);
     // document.body.appendChild(downloadEl);
+    // Append child
     divEl.appendChild(audioEl)
     divEl.appendChild(downloadEl)
+        // Append all in the body DOM
     document.body.appendChild(divEl);
 }
 
@@ -118,7 +132,7 @@ rec.onclick = e => {
         rec.disabled = true;
         // Change background color
         rec.style.backgroundColor = 'orange';
-        // Aninate rec button
+        // Animate rec button
         rec.classList.add('scale');
         // Enable stop button (default disabled)
         stop.disabled = false;
@@ -127,7 +141,7 @@ rec.onclick = e => {
         stop.style.color = '#ffffff';
         // Change title back color
         title.style.color = '#2196F3'
-            // Star recording
+            // Start recording
         recFunction()
             // START STOPWATCH
         clearInterval(swInterval);
@@ -139,7 +153,7 @@ stop.onclick = e => {
     rec.disabled = false;
     // Restore red color on rec button
     rec.style.backgroundColor = 'red';
-    // Disable rex animation 
+    // Disable rec animation 
     rec.classList.remove('scale');
     // Disable stop button
     stop.disabled = true;
@@ -178,6 +192,6 @@ let stopwatchFunction = () => {
         min = 0;
     }
     displayStopwatch = 'min: ' + min + ' : ' + 'sec: ' + sec;
-    // writing output to screen
+    // Write output to the screen
     stopwatch.innerHTML = displayStopwatch;
 };
